@@ -57,7 +57,7 @@ const Weather: React.FC = () => {
               placeholder="Lahore"
               value={city}
               onChange={handleChange}
-              className="weather-input"
+              className="weather-input font-bold"
             />
           </div>
 
