@@ -1,33 +1,123 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap");
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
-}
-
 body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+  background-color: #000000;
 }
 
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
-  }
+span {
+  @apply text-red-600 font-bold;
+}
+
+strong {
+  @apply text-blue-500;
+}
+
+body,
+input,
+button,
+.weather-title,
+.weather-info {
+  font-family: "Montserrat", sans-serif;
+}
+
+.weather-container {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #000000; /* Set background to black */
+}
+
+.weather-title {
+  font-size: 26px;
+  font-weight: 700;
+  margin-bottom: 20px;
+  color: white; /* Set text color to white */
+}
+
+.box {
+  background-color: #212121cc;
+  border: 1px solid #494949;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(5px);
+  border-radius: 10px;
+  padding: 20px;
+  width: 300px;
+  height: auto;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+
+.weather-title {
+  text-align: center;
+  color: #ffffff; /* Ensure title color is white */
+}
+
+.search-inp {
+  position: relative;
+  margin-bottom: 20px;
+  color: black;
+}
+
+.weather-input {
+  background-color: rgb(44, 44, 44);
+  color: white;
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+  outline: none;
+  transition: border-color 0.3s ease, transform 0.2s ease;
+}
+
+.search-icon {
+  position: absolute;
+  top: 50%;
+  right: 10px;
+  transform: translateY(-50%);
+}
+
+.weather-input:hover {
+  border-color: #0c3483;
+  transform: scale(1.02);
+}
+
+.weather-button {
+  width: 100%;
+  padding: 10px;
+  background-color: #0f44ae;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.weather-button:hover {
+  background-color: #0c3483;
+  transform: scale(1.05);
+}
+
+.weather-info {
+  margin-top: 20px;
+  text-align: center;
+  color: #fffefe;
+  opacity: 10;
+  transition: opacity 0.5s ease;
+}
+
+.weather-info.show {
+  opacity: 1;
+}
+
+.weather-info p {
+  margin: 5px 0;
+  font-size: 18px;
 }
